@@ -22,37 +22,70 @@ export const enum Namespaces {
   HTML
 }
 
+// bao:节点类型
 export const enum NodeTypes {
+  // 根节点
   ROOT,
+  // 元素节点
   ELEMENT,
+  // 文本节点
   TEXT,
+  // 注释节点
   COMMENT,
+  // 简单表达式
   SIMPLE_EXPRESSION,
+  // 插值
   INTERPOLATION,
+  // 属性
   ATTRIBUTE,
+  // 指令
   DIRECTIVE,
-  // containers
+  // 混合表达式，containers
   COMPOUND_EXPRESSION,
+  // if
   IF,
+  // else
   IF_BRANCH,
+  // for
   FOR,
+  // ??
   TEXT_CALL,
   // codegen
   VNODE_CALL,
+  // func()
   JS_CALL_EXPRESSION,
+  // { a: "1" }
   JS_OBJECT_EXPRESSION,
+  // a: "1"
   JS_PROPERTY,
+  // [1, 2]
   JS_ARRAY_EXPRESSION,
+  // 【】包裹的部分
+  // const func = 【function (a, b){
+  //   return a + b;
+  // }】
   JS_FUNCTION_EXPRESSION,
+  // a > 0 ? true : false
   JS_CONDITIONAL_EXPRESSION,
+  // ?? 缓存表达式
   JS_CACHE_EXPRESSION,
-
   // ssr codegen
+  // 【】包裹的部分
+  //  function a(a, b) 【{
+  //    return a + b;
+  //  }】
   JS_BLOCK_STATEMENT,
+  // 模板字符串 `a${b}c`
   JS_TEMPLATE_LITERAL,
+  // if (a > b) {
+  //  a ++;
+  // }
   JS_IF_STATEMENT,
+  // 赋值表达式
   JS_ASSIGNMENT_EXPRESSION,
+  // ?? 序列表达式
   JS_SEQUENCE_EXPRESSION,
+  // return 1
   JS_RETURN_STATEMENT
 }
 
